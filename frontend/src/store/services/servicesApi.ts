@@ -4,8 +4,8 @@ import { RootType } from "..";
 
 const baseQuery = fetchBaseQuery({
   // baseUrl: "https://cors-anywhere.herokuapp.com/http://10.4.56.72:8080/",
-  // baseUrl: "http://10.4.56.72:8080/",
-  baseUrl: "http://81.94.150.101:8080",
+  baseUrl: "http://10.4.56.72:8080/",
+  // baseUrl: "http://81.94.150.101:8080",
   // baseUrl: BASE_URL,
   prepareHeaders: (headers, { getState }) => {
     const token =
