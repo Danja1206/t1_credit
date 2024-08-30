@@ -1,0 +1,143 @@
+.make-payment {
+  width: 380px;
+  height: 180px;
+  position: fixed;
+  top: 160px;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background-color: rgb(238 238 238);
+  box-shadow: 0px 1px 2px black;
+  border-radius: 12px;
+  scale: 0;
+  transition: scale 0.3s ease;
+
+  @media (max-width: 1070px) {
+    height: 170px;
+  }
+
+  @media (max-width: 900px) {
+    width: 360px;
+    height: 160px;
+  }
+
+  @media (max-width: 430px) {
+    width: 320px;
+    height: 180px;
+  }
+
+  &.visible {
+    scale: 1;
+  }
+
+  .payment-wrapper-input {
+    width: 90%;
+    height: 66px;
+    position: relative;
+    margin: 34px auto 18px;
+
+    @media (max-width: 1070px) {
+      height: 54px;
+    }
+
+    @media (max-width: 900px) {
+      height: 44px;
+      margin: 34px auto 20px;
+    }
+
+    @media (max-width: 430px) {
+      height: 64px;
+    }
+
+    .payment-input {
+      width: 50%;
+      // margin: 0 auto;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      outline: 0;
+      border: none;
+      background-color: transparent;
+      font-size: 16px;
+      border-bottom: 2px solid var(--main-color);
+
+      @media (max-width: 1070px) {
+        font-size: 15px;
+      }
+
+      @media (max-width: 900px) {
+        font-size: 14px;
+      }
+
+      &.alert {
+        border-bottom: 2px solid red;
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      font-size: 16px;
+
+      @media (max-width: 1070px) {
+        font-size: 15px;
+      }
+
+      @media (max-width: 900px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .send-payment {
+    width: 180px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px black;
+    background-color: var(--main-color);
+    margin: 0 auto;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.3s ease;
+
+    @media (max-width: 1070px) {
+      width: 160px;
+      height: 36px;
+    }
+
+    @media (max-width: 600px) {
+      cursor: default;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.5;
+        transform: translateY(-5px);
+        box-shadow: none;
+      }
+    }
+
+    &:active {
+      opacity: 0.5;
+      transform: translateY(-5px);
+      box-shadow: none;
+    }
+
+    p {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      color: #fff;
+
+      @media (max-width: 1070px) {
+        font-size: 15px;
+      }
+    }
+  }
+}

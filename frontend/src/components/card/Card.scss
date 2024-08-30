@@ -1,0 +1,174 @@
+@mixin CardMixin {
+  width: 92%;
+  margin: 12px auto;
+  height: 120px;
+  opacity: 0.5;
+  display: flex;
+  flex-direction: column;
+  // padding: 16px 0 0;
+  position: relative;
+  // gap: 10px;
+  color: #fff;
+  box-shadow: 0 1px 2px 0 black;
+  border-radius: 10px;
+  // background-color: var(--main-color);
+  transition: all 0.3s ease;
+
+  @media (max-width: 1070px) {
+    height: 90px;
+  }
+}
+
+.card-left {
+  @include CardMixin;
+  transform: translateX(-16px);
+
+  &.move {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.card-right {
+  @include CardMixin;
+  transform: translateX(16px);
+
+  &.move {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.card-head {
+  width: 96.3%;
+  height: 70%;
+  padding-left: 4%;
+  gap: 6px;
+  border-radius: 8px 12px 0 0;
+  background-color: var(--main-color);
+  position: relative;
+
+  &-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 26%;
+
+    p {
+      font-size: 16px;
+      top: 30%;
+
+      @media (max-width: 1070px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.card-body {
+  width: 100%;
+  height: 56%;
+  // margin: 20px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgb(238 238 238);
+  position: absolute;
+  color: #000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 46% 46% 12px 12px;
+
+  p {
+    font-size: 16px;
+
+    @media (max-width: 1070px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.card-item-wrapper {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  .card-edit {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.1s ease;
+
+    @media (max-width: 1070px) {
+      width: 15px;
+      height: 15px;
+    }
+
+    &:active {
+      opacity: 0.5;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      cursor: default;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .card-drop {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.1s ease;
+
+    @media (max-width: 1070px) {
+      width: 13px;
+    }
+
+    &:active {
+      opacity: 0.5;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      cursor: default;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@keyframes move-left {
+  from {
+    transform: translateX(10%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes move-right {
+  from {
+    transform: translateX(-10%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

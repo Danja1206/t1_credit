@@ -1,0 +1,41 @@
+.check-box {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--main-color);
+  position: relative;
+  cursor: pointer;
+
+  &.alert {
+    border: 2px solid red;
+  }
+
+  @media (max-width: 600px) {
+    cursor: default;
+  }
+
+  .mark-wrapper {
+    scale: 0;
+    transition: all 0.3s ease;
+
+    &.check {
+      scale: 1;
+    }
+
+    span {
+      display: block;
+      width: 160%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: var(--main-color);
+      //   background-color: black;
+    }
+
+    .left-line {
+      transform: translate(-30%, 20%) rotate(80deg);
+    }
+
+    .right-line {
+      transform: translate(0%, -40%) rotate(296deg);
+    }
+  }
+}

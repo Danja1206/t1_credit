@@ -1,0 +1,68 @@
+.personal-account {
+  width: 100%;
+
+  .my-credits {
+    width: 880px;
+    margin: 80px auto 0;
+
+    @media (max-width: 1070px) {
+      width: 600px;
+    }
+
+    @media (max-width: 660px) {
+      width: 400px;
+    }
+
+    @media (max-width: 440px) {
+      width: 360px;
+    }
+
+    &-header {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+
+      h3 {
+        font-size: 18px;
+        animation: 0.5s 0s linear move-animate;
+
+        @media (max-width: 1070px) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-body {
+      margin-top: 20px;
+      text-align: center;
+
+      p {
+        font-size: 16px;
+
+        @media (max-width: 1070px) {
+          font-size: 15px;
+        }
+
+        @media (max-width: 900px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes move-animate {
+  from {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

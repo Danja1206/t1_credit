@@ -1,0 +1,25 @@
+.forms-wrapper {
+  width: 400px;
+  height: 400px;
+  margin: 80px auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  scale: 1;
+  transition: scale 0.3s ease;
+
+  &.close {
+    scale: 0;
+  }
+
+  @media (max-width: 1070px) {
+    width: 360px;
+    height: 360px;
+  }
+
+  @media (max-width: 390px) {
+    width: 340px;
+  }
+}
